@@ -1,0 +1,24 @@
+Project:
+  Name: weld-tool
+  Desc: Tool to automate builds
+  Aliases:
+  - weld
+  - pxnweld
+  - weldtool
+  Arch: x86_64
+  License: AGPLv3+ADD-PXN-V1
+  URL: https://poixson.com/
+  PublicRepo: github.com/PoiXson/pxnWelder/weld
+  Requires:
+  - bash, grep
+  - zip, unzip
+  Recommends:
+  - alien
+  - composer
+  - golang
+  Generate:
+  - main.go
+  TagFiles:
+  - main.go
+  Files:
+  - 0555  weld  weld  /usr/bin/weld

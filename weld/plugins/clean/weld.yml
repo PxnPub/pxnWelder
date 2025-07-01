@@ -1,0 +1,13 @@
+Project:
+  Name: weld-clean
+  Desc: Workspace cleaning plugin for pxnWeld tool
+  Arch: x86_64
+  License: AGPLv3+ADD-PXN-V1
+  URL: https://poixson.com/
+  PublicRepo: github.com/PoiXson/pxnWelder/weld/plugins/clean
+  Requires:
+  - weld-tool
+  TagFiles:
+  - plugin.go
+  Files:
+  - 0555  a  a  /usr/lib64/weld/weld-clean.so
