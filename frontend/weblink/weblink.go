@@ -2,7 +2,7 @@ package weblink;
 // pxnWelder -> broker
 
 import(
-	UtilsRPC  "github.com/PoiXson/pxnGoCommon/rpc"
+	PxnRPC    "github.com/PoiXson/pxnGoCommon/rpc"
 	Service   "github.com/PoiXson/pxnGoCommon/service"
 	API_Front "github.com/PoiXson/pxnMetrics/api/front"
 );
@@ -11,14 +11,14 @@ import(
 
 type WebLink struct {
 	service *Service.Service
-	rpc     *UtilsRPC.ClientRPC
+	rpc     *PxnRPC.ClientRPC
 	API     API_Front.ServiceFrontendAPIClient
 }
 
 
 
 func New(service *Service.Service, addr string) *WebLink {
-	rpc := UtilsRPC.NewClientRPC(service, addr);
+	rpc := PxnRPC.NewClientRPC(service, addr);
 //TODO
 //	rpc.UseTLS = true;
 	return &WebLink{

@@ -1,0 +1,49 @@
+
+plugins {
+	id 'java'
+	id 'eclipse'
+}
+
+buildDir="${rootDir}/.gradle/build"
+
+group   = projectGroup
+version = projectVersion
+
+[ compileJava, compileTestJava ]*.options*.encoding = 'UTF-8'
+
+sourceSets {
+	main {
+		java {
+			srcDir 'src/'
+			outputDir = file("${buildDir}/classes/java/main")
+		}
+	}
+}
+
+repositories {
+//	mavenLocal()
+//	mavenCentral()
+//	maven {
+//		name = 'papermc'
+//		url  = 'https://repo.papermc.io/repository/maven-snapshots/'
+//	}
+}
+
+task sourceJar(type: Jar, dependsOn: classes) {
+	archiveBaseName.set("${project.name}-${project.version}-sources")
+	from sourceSets.main.allSource
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_21
+	withSourcesJar()
+	toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+}
+
+configurations.all {
+	resolutionStrategy {
+		failOnVersionConflict()
+		cacheDynamicVersionsFor 5*60, 'seconds'
+		cacheChangingModulesFor 0,    'seconds'
+	}
+}

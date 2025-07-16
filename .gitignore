@@ -1,3 +1,9 @@
+weld/weld
+weld/plugins/weld-rpm/weld-rpm.so
+ci/ci
+frontend/frontend
+badge/badge
+
 .git/
 .svn/
 .hg/

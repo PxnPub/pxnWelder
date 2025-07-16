@@ -5,26 +5,26 @@ import(
 //	Log     "log"
 	Flag    "flag"
 //	Flagz   "github.com/PoiXson/pxnGoCommon/utils/flagz"
-	Service "github.com/PoiXson/pxnGoCommon/service"
-//	UtilsFS "github.com/PoiXson/pxnGoCommon/utils/fs"
+	PxnServ "github.com/PoiXson/pxnGoCommon/service"
+//	PxnFS   "github.com/PoiXson/pxnGoCommon/utils/fs"
 //	Configs "github.com/PoiXson/pxnWelder/ci/configs"
 );
 
 
 
 type AppWelderCI struct {
-	service *Service.Service
+	service *PxnServ.Service
 //	config  *Configs.CfgWelderCI
 }
 
 
 
-func New() Service.AppFace {
+func New() PxnServ.AppFace {
 	return &AppWelderCI{};
 }
 
 func (app *AppWelderCI) Main() {
-	app.service = Service.New();
+	app.service = PxnServ.New();
 	app.service.Start();
 	app.flags_and_configs(DefaultConfigFile);
 

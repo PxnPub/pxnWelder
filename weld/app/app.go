@@ -4,11 +4,12 @@ package app;
 import(
 //	OS       "os"
 //	Log      "log"
-	Fmt      "fmt"
+//	Fmt      "fmt"
 	Flag     "flag"
 	Flagz    "github.com/PoiXson/pxnGoCommon/utils/flagz"
-//	UtilsFS  "github.com/PoiXson/pxnGoCommon/utils/fs"
-	Service  "github.com/PoiXson/pxnGoCommon/service"
+//	Utils    "github.com/PoiXson/pxnGoCommon/utils"
+//	PxnFS    "github.com/PoiXson/pxnGoCommon/utils/fs"
+	PxnServ  "github.com/PoiXson/pxnGoCommon/service"
 //	Configs  "github.com/PoiXson/pxnWelder/weld/configs"
 	WeldPlug "github.com/PoiXson/pxnWelder/weld/plugin"
 );
@@ -16,41 +17,33 @@ import(
 
 
 type AppWeldTool struct {
-//	service *Service.Service
+//	service *PxnServ.Service
 //	config  *Configs.CfgWeldTool
 	IsDebug bool
 }
 
 
 
-func New() Service.AppFace {
+func New() PxnServ.AppFace {
 	return &AppWeldTool{};
 }
 
 func (app *AppWeldTool) Main() {
 	app.flags_and_configs(DefaultConfigFile);
 
-
-
 //	LOOP_ARGS:
-	for i, arg := range Flag.Args() {
-//		if i == 0 { continue LOOP_ARGS; }
-		Fmt.Printf(" Arg: %d %s\n", i, arg);
-	}
+//	for i, arg := range Flag.Args() {
+//		Fmt.Printf(" Arg: %d %s\n", i, arg);
+//	}
 
-
-
-
-
-
-//	app.service = Service.New();
+//	app.service = PxnServ.New();
 //	app.service.Start();
 
 // test load a plugin
-plugin := WeldPlug.Load("plugins/rpm/weld-rpm.so");
-if err := plugin.Run(WeldPlug.Stage_Clean); err != nil {
-	panic(err);
-}
+plugin := WeldPlug.Load("../plugins/rpm/weld-rpm.so");
+workspace := Work.NewWorkspace();
+stage := "clean";
+if err := plugin.Run(workspace, stage); err != nil { panic(err); }
 
 }
 
