@@ -1,9 +1,9 @@
 package main;
 
 import(
-//	Exec     "os/exec"
-	WeldPlug "github.com/PoiXson/pxnWelder/plugin"
-	Work     "github.com/PoiXson/pxnWelder/weld/work"
+//	Exec      "os/exec"
+	WeldPlug  "github.com/PoiXson/pxnWelder/plugin"
+	Workspace "github.com/PoiXson/pxnWelder/weld/workspace"
 );
 
 
@@ -23,7 +23,7 @@ func NewPlugin() WeldPlug.WeldPlugin {
 
 
 
-func (plugin *PluginGit) Run(workspace *Work.Workspace,
+func (plugin *PluginGit) Run(workspace *Workspace.Workspace,
 		stage string) error {
 	print("Hello! Git works\n");
 

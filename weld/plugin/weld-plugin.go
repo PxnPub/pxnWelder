@@ -1,7 +1,7 @@
 package plugin;
 
 import(
-	Work "github.com/PoiXson/pxnWelder/weld/work"
+	Work "github.com/PoiXson/pxnWelder/weld/worker"
 );
 
 

@@ -2,16 +2,18 @@ package app;
 // weld tool
 
 import(
-//	OS       "os"
-//	Log      "log"
-//	Fmt      "fmt"
-	Flag     "flag"
-	Flagz    "github.com/PoiXson/pxnGoCommon/utils/flagz"
-//	Utils    "github.com/PoiXson/pxnGoCommon/utils"
-//	PxnFS    "github.com/PoiXson/pxnGoCommon/utils/fs"
-	PxnServ  "github.com/PoiXson/pxnGoCommon/service"
-//	Configs  "github.com/PoiXson/pxnWelder/weld/configs"
-	WeldPlug "github.com/PoiXson/pxnWelder/weld/plugin"
+//	OS        "os"
+//	Log       "log"
+//	Fmt       "fmt"
+	Flag      "flag"
+	Flagz     "github.com/PoiXson/pxnGoCommon/utils/flagz"
+//	Utils     "github.com/PoiXson/pxnGoCommon/utils"
+//	PxnFS     "github.com/PoiXson/pxnGoCommon/utils/fs"
+	PxnServ   "github.com/PoiXson/pxnGoCommon/service"
+//	Configs   "github.com/PoiXson/pxnWelder/weld/configs"
+	WeldPlug  "github.com/PoiXson/pxnWelder/weld/plugin"
+	Worker    "github.com/PoiXson/pxnWelder/weld/worker"
+	Workspace "github.com/PoiXson/pxnWelder/weld/workspace"
 );
 
 
@@ -40,10 +42,15 @@ func (app *AppWeldTool) Main() {
 //	app.service.Start();
 
 // test load a plugin
-plugin := WeldPlug.Load("../plugins/rpm/weld-rpm.so");
-workspace := Work.NewWorkspace();
+print("\n");
+plugins := WeldPlug.LoadPath("./p/");
+print("\n");
+workspace := Workspace.New("/zcode/may/tools/pxnWelder/weld");
 stage := "clean";
-if err := plugin.Run(workspace, stage); err != nil { panic(err); }
+for _, plugin := range plugins {
+	if err := plugin.Run(workspace, stage); err != nil { panic(err); }
+}
+print("\n");
 
 }
 

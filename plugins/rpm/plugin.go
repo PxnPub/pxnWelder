@@ -1,13 +1,13 @@
 package main;
 
 import(
-	OS       "os"
-	Fmt      "fmt"
-	Time     "time"
-	IOUtils  "io/ioutil"
-	RPM      "github.com/google/rpmpack"
-	WeldPlug "github.com/PoiXson/pxnWelder/weld/plugin"
-	Work     "github.com/PoiXson/pxnWelder/weld/work"
+	OS        "os"
+	Fmt       "fmt"
+	Time      "time"
+	IOUtils   "io/ioutil"
+	RPM       "github.com/google/rpmpack"
+	WeldPlug  "github.com/PoiXson/pxnWelder/weld/plugin"
+	Workspace "github.com/PoiXson/pxnWelder/weld/workspace"
 );
 
 
@@ -27,7 +27,7 @@ func NewPlugin() WeldPlug.WeldPlugin {
 
 
 
-func (plugin *PluginRPM) Run(workspace *Work.Workspace,
+func (plugin *PluginRPM) Run(workspace *Workspace.Workspace,
 		stage string) error {
 	print("Hello! RPM works\n");
 	rpm, err := RPM.NewRPM(RPM.RPMMetaData{
@@ -45,7 +45,7 @@ func (plugin *PluginRPM) Run(workspace *Work.Workspace,
 	if err != nil { return err; }
 	data, err := IOUtils.ReadFile("weld");
 	if err != nil { return err; }
-Fmt.Printf("len: %d\n", len(data));
+Fmt.Printf("\nlen: %d\n", len(data));
 	rpm.AddFile(RPM.RPMFile{
 		Name: "/usr/local/hello",
 		Body: data,

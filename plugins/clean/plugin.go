@@ -1,8 +1,8 @@
 package main;
 
 import(
-	WeldPlug "github.com/PoiXson/pxnWelder/weld/plugin"
-	Work     "github.com/PoiXson/pxnWelder/weld/work"
+	WeldPlug  "github.com/PoiXson/pxnWelder/weld/plugin"
+	Workspace "github.com/PoiXson/pxnWelder/weld/workspace"
 );
 
 
@@ -22,7 +22,7 @@ func NewPlugin() WeldPlug.WeldPlugin {
 
 
 
-func (plugin *PluginClean) Run(workspace *Work.Workspace,
+func (plugin *PluginClean) Run(workspace *Workspace.Workspace,
 		stage string) error {
 	print("Hello! Clean works\n");
 	return nil;
