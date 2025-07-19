@@ -1,0 +1,13 @@
+Project:
+  Name: weld-Rust
+  Desc: Rust plugin for pxnWeld tool
+  Arch: x86_64
+  License: AGPLv3+ADD-PXN-V1
+  URL: https://poixson.com/
+  PublicRepo: github.com/PoiXson/pxnWelder/plugins/rust
+  Requires:
+  - weld-tool
+  TagFiles:
+  - plugin.go
+  Files:
+  - 0555  weld:weld  /usr/lib64/weld/weld-rust.so

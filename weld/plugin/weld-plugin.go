@@ -1,7 +1,7 @@
 package plugin;
 
 import(
-	Work "github.com/PoiXson/pxnWelder/weld/worker"
+	Workspace "github.com/PoiXson/pxnWelder/weld/workspace"
 );
 
 
@@ -17,5 +17,7 @@ import(
 
 
 type WeldPlugin interface {
-	Run(work *Work.Workspace, stage string) error
+	GetName() string
+	GetWeight(stage string) uint8
+	Run(workspace *Workspace.Workspace, stage string) error
 }

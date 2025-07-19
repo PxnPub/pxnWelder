@@ -8,6 +8,6 @@ import(
 
 
 type CfgWeldTool struct {
-//	BindWeb    string `yaml:"Bind-Web"`
-//	BrokerAddr string `yaml:"Broker-Addr"`
+	PathPlugins   string `yaml:"Path-Plugins"`
+	PathTemplates string `yaml:"Path-Templates"`
 }

@@ -1,4 +1,6 @@
 package main;
+// pxnWeld-RPM
+// * package
 
 import(
 	OS        "os"
@@ -14,6 +16,8 @@ import(
 
 const Version = "{{{VERSION}}}";
 
+const WEIGHT_PACKAGE = 50;
+
 
 
 type PluginRPM struct {
@@ -27,8 +31,18 @@ func NewPlugin() WeldPlug.WeldPlugin {
 
 
 
-func (plugin *PluginRPM) Run(workspace *Workspace.Workspace,
-		stage string) error {
+func (plugin *PluginRPM) GetName() string {
+	return "RPM";
+}
+
+func (plugin *PluginRPM) GetWeight(stage string) uint8 {
+	if stage == "package" { return WEIGHT_PACKAGE; }
+	return 0;
+}
+
+
+
+func (plugin *PluginRPM) Run(workspace *Workspace.Workspace, stage string) error {
 	print("Hello! RPM works\n");
 	rpm, err := RPM.NewRPM(RPM.RPMMetaData{
 		Name:    "example",

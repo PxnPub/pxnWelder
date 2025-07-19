@@ -5,6 +5,7 @@ go 1.24.4
 require (
 	github.com/PoiXson/pxnGoCommon/service v0.0.0-20250709000515-80ab501e6ea7
 	github.com/PoiXson/pxnGoCommon/utils v0.0.0-20250709000515-80ab501e6ea7
+	github.com/PoiXson/pxnGoLog/logger v0.0.0-20250718093124-c43aa406f561
 	gopkg.in/yaml.v2 v2.4.0
 )
 

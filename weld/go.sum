@@ -2,6 +2,8 @@ github.com/PoiXson/pxnGoCommon/service v0.0.0-20250709000515-80ab501e6ea7 h1:RtN
 github.com/PoiXson/pxnGoCommon/service v0.0.0-20250709000515-80ab501e6ea7/go.mod h1:hfWWaZfpDIqpkIWO6wyrUJ3hfa329TFT3RXoad9ejho=
 github.com/PoiXson/pxnGoCommon/utils v0.0.0-20250709000515-80ab501e6ea7 h1:+2tUL450LWEMfyv2Oroysur3+n0mxM3rJlLRU9dFwrY=
 github.com/PoiXson/pxnGoCommon/utils v0.0.0-20250709000515-80ab501e6ea7/go.mod h1:63+q5tY1gKOPMKcowUgS91M7M2oUMD4det8M3ygvWV8=
+github.com/PoiXson/pxnGoLog/logger v0.0.0-20250718093124-c43aa406f561 h1:E3EEUlaRYxFcLs8HK5OdYASf7PsvY9Qwyi4si6UxG30=
+github.com/PoiXson/pxnGoLog/logger v0.0.0-20250718093124-c43aa406f561/go.mod h1:DmWH2EDRoxWjrR53lLA8hg3Sn4xPSoz2Gr/dqODYiMQ=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/golang-collections/collections v0.0.0-20130729185459-604e922904d3 h1:zN2lZNZRflqFyxVaTIU61KNKQ9C0055u9CAfpmqUvo4=

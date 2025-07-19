@@ -3,10 +3,7 @@ package app;
 
 
 
-const LogPrefix         = "[Weld] ";
-const DefaultConfigFile = "config.yml";
-var DefaultConfigPaths = [...]string {
-	".",
-	"~",
-	"/etc",
-};
+const LogPrefix            = "[Weld] ";
+const DefaultConfigFile    = "/etc/welder/config.yml";
+const DefaultPathTemplates = "/etc/welder/templates";
+const DefaultPathPlugins   = "/usr/share/welder/plugins";

@@ -1,0 +1,43 @@
+find plugin.go
+fix head comment
+
+
+* clean
+  * 50-clean
+
+* deploy
+  * 50-deploy
+
+* gen
+  * 50-config
+
+* git
+  * 50-pp
+  * 50-gg
+
+* golang
+  * 50-config
+  * 50-build
+
+* gradle
+  * 50-config
+  * 50-build
+
+* make
+  * 50-config
+  * 50-build
+
+* maven
+  * 50-config
+  * 50-build
+
+* php
+  * 50-config
+  * 50-build
+
+* rpm
+  * 50-package
+
+* rust
+  * 50-config
+  * 50-build
